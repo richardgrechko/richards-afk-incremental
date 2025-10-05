@@ -185,7 +185,7 @@ if (!window.update) {
 				.mul(new Decimal(12.5).pow(afkData.blueStars.root(1.5)))
 				.mul(afkData.yellowStars.div(25).add(1).pow(2))
 				.mul(new Decimal(25).pow(afkData.finalStars.pow(1.25)))
-			afkData.infinityExp = afkData.infinities.log(25).pow(5).log(25).add(1).root(2.5).div(afkData.infinities.add(1).log(1e6).add(1).root(2))
+			afkData.infinityExp = afkData.infinities.log(25).pow(5).log(25).add(1).root(4).div(afkData.infinities.add(1).log(1e6).add(1).root(2))
 				.add(afkData.greenStars.div(10))
 				.add(afkData.yellowStars.div(10).root(1.5))
 				.add(afkData.stars.div(10).root(2))
