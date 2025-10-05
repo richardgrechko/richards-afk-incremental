@@ -183,18 +183,18 @@ if (!window.update) {
 		} else {
 			afkData.stars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.stars.div(3).pow(1.5).floor(),new Decimal(0))) {
-			afkData.blueStars = afkData.stars.div(3).pow(1.5).floor()
+		if (Decimal.gte(afkData.stars.div(2).root(1.5).floor(),new Decimal(0))) {
+			afkData.blueStars = afkData.stars.div(2).root(1.5).floor()
 		} else {
 			afkData.blueStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.blueStars.div(4).pow(1.5).floor(),new Decimal(0))) {
-			afkData.greenStars = afkData.blueStars.div(4).pow(1.5).floor()
+		if (Decimal.gte(afkData.blueStars.div(3).root(1.5).floor(),new Decimal(0))) {
+			afkData.greenStars = afkData.blueStars.div(3).root(1.5).floor()
 		} else {
 			afkData.greenStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.greenStars.div(4).pow(1.5).floor(),new Decimal(0))) {
-			afkData.yellowStars = afkData.greenStars.div(4).pow(1.5).floor()
+		if (Decimal.gte(afkData.greenStars.div(4).root(1.5).floor(),new Decimal(0))) {
+			afkData.yellowStars = afkData.greenStars.div(4).root(1.5).floor()
 		} else {
 			afkData.yellowStars = new Decimal(0)
 		}
