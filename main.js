@@ -162,8 +162,8 @@ if (!window.update) {
 		afkData.previousPower = fallback(afkData.power, new Decimal(0));
 		afkData.points = afkData.points.add(afkData.pointGain.mul(afkData.pointMulti).mul(afkData.power.add(1)).pow(afkData.pointExp).root(afkData.pointRoot).mul(dt));
 		afkData.pointGain = afkData.points.div(25).add(1).root(3).mul(afkData.power.add(1).pow(2)).mul(new Decimal("e2.5e4").pow(afkData.greyStars.div(2).add(1).pow(1.25)));
-		afkData.pointMulti = afkData.points.add(1).log(50).add(1).pow(2.5).mul(new Decimal(2).pow(afkData.infinities.add(afkData.power.add(1).log(5)).div(10).root(1.25)).mul(new Decimal(2).pow(afkData.ranks.root(1.1))).mul(new Decimal("e2.5e4").pow(afkData.stars.pow(1.5))).mul(new Decimal("e5e4").pow(afkData.blueStars.pow(1.5))).mul(new Decimal("ee5").pow(afkData.redStars.pow(1.25)))).pow(afkData.finalStars.div(100).root(1.25));
-		afkData.pointExp = afkData.points.add(1).log10().add(1).log10().add(1).add(afkData.infinities.div(50).root(5).add(afkData.eternities.div(25).root(1.5)).add(afkData.power.add(1).log10().div(10)).add(afkData.ranks.div(500))).add(afkData.blueStars.div(5)).add(afkData.silverStars.div(2).pow(1.25)).root(2.5);
+		afkData.pointMulti = afkData.points.add(1).log(50).add(1).pow(2.5).mul(new Decimal(2).pow(afkData.infinities.add(afkData.power.add(1).log(5)).div(10).root(1.25)).mul(new Decimal(2).pow(afkData.ranks.root(1.1))).mul(new Decimal("e2.5e4").pow(afkData.stars.pow(1.5))).mul(new Decimal("e5e4").pow(afkData.blueStars.pow(1.5))));
+		afkData.pointExp = afkData.points.add(1).log10().add(1).log10().add(1).add(afkData.infinities.div(50).root(5).add(afkData.eternities.div(25).root(1.5)).add(afkData.power.add(1).log10().div(10)).add(afkData.ranks.div(500))).add(afkData.blueStars.div(5)).add(afkData.redStars.div(5)).add(afkData.silverStars.div(2).pow(1.25)).root(2.5).add(afkData.finalStars.div(10).root(1.25));
 		afkData.power = afkData.power.add(afkData.powerGain.mul(dt));
 		afkData.powerGain = afkData.points.add(1).log(2).root(1.375).div(100).mul(afkData.power.add(1).root(3)).mul(afkData.pinkStars.add(1).pow(2));
 		if (Decimal.gte(afkData.points,Number.MAX_VALUE)) {
@@ -184,7 +184,7 @@ if (!window.update) {
 			afkData.infinityMulti = afkData.infinities.log(25).pow(5).root(afkData.infinities.add(1).log(1e6).add(1)).mul(new Decimal(5).pow(afkData.stars.root(1.5)))
 				.mul(new Decimal(12.5).pow(afkData.blueStars.root(1.5)))
 				.mul(afkData.yellowStars.div(25).add(1).pow(2))
-				.mul(new Decimal(25).pow(afkData.finalStars.pow(1.25).add(1)))
+				.mul(new Decimal(25).pow(afkData.finalStars.pow(1.25)))
 			afkData.infinityExp = afkData.infinities.log(25).pow(5).log(25).add(1).root(2.5).div(afkData.infinities.add(1).log(1e6).add(1).root(2))
 				.add(afkData.greenStars.div(10))
 				.add(afkData.yellowStars.div(10).root(1.5))
@@ -213,43 +213,43 @@ if (!window.update) {
 		} else {
 			afkData.blueStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.blueStars.div(3).root(1.25).floor(),new Decimal(0))) {
-			afkData.greenStars = afkData.blueStars.div(3).root(1.25).floor()
+		if (Decimal.gte(afkData.blueStars.div(2).root(1.25).floor(),new Decimal(0))) {
+			afkData.greenStars = afkData.blueStars.div(2).root(1.25).floor()
 		} else {
 			afkData.greenStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.greenStars.div(4).root(1.25).floor(),new Decimal(0))) {
-			afkData.yellowStars = afkData.greenStars.div(4).root(1.25).floor()
+		if (Decimal.gte(afkData.greenStars.div(1.5).root(1.25).floor(),new Decimal(0))) {
+			afkData.yellowStars = afkData.greenStars.div(1.5).root(1.25).floor()
 		} else {
 			afkData.yellowStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.yellowStars.div(5).root(1.25).floor(),new Decimal(0))) {
-			afkData.orangeStars = afkData.yellowStars.div(5).root(1.25).floor()
+		if (Decimal.gte(afkData.yellowStars.div(1.5).root(1.25).floor(),new Decimal(0))) {
+			afkData.orangeStars = afkData.yellowStars.div(1.5).root(1.25).floor()
 		} else {
 			afkData.orangeStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.orangeStars.div(7.5).root(1.25).floor(),new Decimal(0))) {
-			afkData.redStars = afkData.orangeStars.div(7.5).root(1.25).floor()
+		if (Decimal.gte(afkData.orangeStars.div(1.5).root(1.5).floor(),new Decimal(0))) {
+			afkData.redStars = afkData.orangeStars.div(1.5).root(1.5).floor()
 		} else {
 			afkData.redStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.redStars.div(7.5).root(1.25).floor(),new Decimal(0))) {
-			afkData.pinkStars = afkData.redStars.div(7.5).root(1.25).floor()
+		if (Decimal.gte(afkData.redStars.div(1.5).root(1.75).floor(),new Decimal(0))) {
+			afkData.pinkStars = afkData.redStars.div(1.5).root(1.75).floor()
 		} else {
 			afkData.pinkStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.pinkStars.div(7.5).root(1.25).floor(),new Decimal(0))) {
-			afkData.silverStars = afkData.pinkStars.div(7.5).root(1.25).floor()
+		if (Decimal.gte(afkData.pinkStars.div(1.5).root(2).floor(),new Decimal(0))) {
+			afkData.silverStars = afkData.pinkStars.div(1.5).root(2).floor()
 		} else {
 			afkData.silverStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.silverStars.div(7.5).root(1.25).floor(),new Decimal(0))) {
-			afkData.greyStars = afkData.silverStars.div(7.5).root(1.25).floor()
+		if (Decimal.gte(afkData.silverStars.div(1.5).root(2.5).floor(),new Decimal(0))) {
+			afkData.greyStars = afkData.silverStars.div(1.5).root(2.5).floor()
 		} else {
 			afkData.greyStars = new Decimal(0)
 		}
-		if (Decimal.gte(afkData.greyStars.div(7.5).root(1.25).floor(),new Decimal(0))) {
-			afkData.finalStars = afkData.greyStars.div(7.5).root(1.25).floor()
+		if (Decimal.gte(afkData.greyStars.div(1.5).root(3).floor(),new Decimal(0))) {
+			afkData.finalStars = afkData.greyStars.div(1.5).root(3).floor()
 		} else {
 			afkData.finalStars = new Decimal(0)
 		}
