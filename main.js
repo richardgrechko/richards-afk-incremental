@@ -140,6 +140,14 @@ if (!window.update) {
 		afkData.infinityPassive = fallback(afkData.infinityPassive, new Decimal(0));
 		afkData.stars = fallback(afkData.stars, new Decimal(0));
 		afkData.blueStars = fallback(afkData.blueStars, new Decimal(0));
+		afkData.greenStars = fallback(afkData.greenStars, new Decimal(0));
+		afkData.yellowStars = fallback(afkData.yellowStars, new Decimal(0));
+		afkData.orangeStars = fallback(afkData.orangeStars, new Decimal(0));
+		afkData.redStars = fallback(afkData.redStars, new Decimal(0));
+		afkData.pinkStars = fallback(afkData.pinkStars, new Decimal(0));
+		afkData.silverStars = fallback(afkData.silverStars, new Decimal(0));
+		afkData.greyStars = fallback(afkData.greyStars, new Decimal(0));
+		afkData.finalStars = fallback(afkData.finalStars, new Decimal(0));
 		afkData.eternities = fallback(afkData.eternities, new Decimal(0));
 		afkData.eternityPassive = fallback(afkData.eternityPassive, new Decimal(0));
 		afkData.previousPoints = fallback(afkData.points, new Decimal(0));
