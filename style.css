@@ -44,6 +44,45 @@ body {
 #yellowStars {
 	color: #ff8;
 }
+#orangeStars {
+	color: #fc8;
+}
+#redStars {
+	color: #f88;
+}
+#pinkStars {
+	color: #f8f;
+}
+#silverStars {
+	color: #ccc;
+}
+#greyStars {
+	color: #888;
+}
+#finalStars {
+	color: #f88;
+	animation: finalStars 6s linear infinite;
+}
+@keyframes finalStars {
+	0%, 100% {
+		color: #f88;
+	}
+	16.66% {
+		color: #ff8;
+	}
+	33.33% {
+		color: #8f8;
+	}
+	50% {
+		color: #8ff;
+	}
+	66.66% {
+		color: #88f;
+	}
+	83.33% {
+		color: #f8f;
+	}
+}
 #eternities {
 	color: #70d;
 }
