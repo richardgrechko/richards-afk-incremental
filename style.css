@@ -1,0 +1,32 @@
+head {
+	display: flex;
+	align-content: center;
+	background-color: #222;
+	color: white;
+	font-size: 24px;
+}
+pointGain {
+	font-size: 20px;
+	color: #ccc;
+}
+power {
+	color: #fcc;
+}
+ranks {
+	color: #f88;
+}
+infinities {
+	color: #840;
+}
+infinityGain {
+	color: #630;
+}
+stars {
+	color: #a8f;
+}
+eternities {
+	color: #808;
+}
+eternityGain {
+	color: #606;
+}
