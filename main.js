@@ -108,6 +108,8 @@ setInterval(_=>{
 	}
 	document.getElementById("stars").innerText = `Stars: ${fullFormat({num: afkData.stars,precision:0})}`
 	document.getElementById("blueStars").innerText = `Blue Stars: ${fullFormat({num: afkData.blueStars,precision:0})}`
+	document.getElementById("greenStars").innerText = `Green Stars: ${fullFormat({num: afkData.greenStars,precision:0})}`
+	document.getElementById("yellowStars").innerText = `Yellow Stars: ${fullFormat({num: afkData.yellowStars,precision:0})}`
 	document.getElementById("eternities").innerText = `Eternities: ${fullFormat({num: afkData.eternities,precision:3})}`
 	if (Decimal.lt(measureOoMsPerSec(afkData.previousEternities,afkData.eternities),20)) {
 		document.getElementById("eternityGain").innerText = `(+${fullFormat({num: fallback(afkData.eternityPassive,new Decimal(1)),precision:3})}/s)`
@@ -156,8 +158,12 @@ if (!window.update) {
 			afkData.previousInfinities = afkData.infinities;
 			afkData.infinities = afkData.infinities.add(afkData.infinityPassive.mul(afkData.infinityMulti).pow(afkData.infinityExp).root(afkData.infinityRoot).mul(dt))
 			afkData.infinityPassive = afkData.points.log(new Decimal(Number.MAX_VALUE).mul(new Decimal(2).pow(afkData.infinities.root(2)))).pow(25).mul(afkData.eternities.root(1.5).add(1)).root(5)
-			afkData.infinityMulti = afkData.infinities.log(25).pow(5).root(afkData.infinities.add(1).log(1e6).add(1)).mul(new Decimal(5).pow(afkData.stars.root(1.5))).mul(new Decimal(12.5).pow(afkData.blueStars.root(1.5)))
+			afkData.infinityMulti = afkData.infinities.log(25).pow(5).root(afkData.infinities.add(1).log(1e6).add(1)).mul(new Decimal(5).pow(afkData.stars.root(1.5)))
+				.mul(new Decimal(12.5).pow(afkData.blueStars.root(1.5)))
+				.mul(afkData.yellowStars.div(25).add(1).pow(2))
 			afkData.infinityExp = afkData.infinities.log(25).pow(5).log(25).add(1).root(2.5).div(afkData.infinities.add(1).log(1e6).add(1).root(2))
+				.add(afkData.greenStars.div(10))
+				.add(afkData.yellowStars.div(10).root(1.5))
 		} else if (Decimal.gte(afkData.points,new Decimal(Number.MAX_VALUE).mul(new Decimal(2).pow(afkData.infinities.root(2)))) && Decimal.lt(afkData.infinities,25)) {
 			afkData.previousInfinities = new Decimal(0);
 			afkData.infinities = afkData.infinities.add(afkData.eternities.root(1.5).add(1));
@@ -181,6 +187,16 @@ if (!window.update) {
 			afkData.blueStars = afkData.stars.div(3).pow(1.5).floor()
 		} else {
 			afkData.blueStars = new Decimal(0)
+		}
+		if (Decimal.gte(afkData.blueStars.div(4).pow(1.5).floor(),new Decimal(0))) {
+			afkData.greenStars = afkData.blueStars.div(4).pow(1.5).floor()
+		} else {
+			afkData.greenStars = new Decimal(0)
+		}
+		if (Decimal.gte(afkData.greenStars.div(4).pow(1.5).floor(),new Decimal(0))) {
+			afkData.yellowStars = afkData.greenStars.div(4).pow(1.5).floor()
+		} else {
+			afkData.yellowStars = new Decimal(0)
 		}
 		if (Decimal.gte(afkData.infinities,new Decimal(Number.MAX_VALUE).mul(new Decimal(2).pow(afkData.eternities.root(2)))) && Decimal.gte(afkData.eternities,10)) {
 			afkData.previousEternities = afkData.eternities;
