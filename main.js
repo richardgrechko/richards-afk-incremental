@@ -173,7 +173,7 @@ if (!window.update) {
 		}
 		if (Decimal.gte(afkData.points.add(1).log(16).add(1).sub(new Decimal(1e6).log(16)).floor(),new Decimal(0))) {
 			afkData.ranks = afkData.points.add(1).log(16).add(1).sub(new Decimal(1e6).log(16))
-				.mul(afkData.orangeStars.div(10).add(1).root(1.5)).floor()
+				.mul(afkData.orangeStars.div(10).root(1.5)).floor()
 		} else {
 			afkData.ranks = new Decimal(0)
 		}
