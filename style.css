@@ -1,36 +1,44 @@
 body {
 	display: flex;
 	align-content: center;
-	background-color: #222;
-	color: white;
+	background-color: #112;
+	color: #ffffff;
 	font-size: 24px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-pointSoftcap, infinitySoftcap {
+#pointSoftcap, #infinitySoftcap {
 	font-size: 20px;
 	color: #f00;
 }
-pointGain {
+#pointGain {
 	font-size: 20px;
 	color: #ccc;
 }
-power {
+#power {
 	color: #fcc;
 }
-ranks {
+#powerGain {
 	color: #f88;
 }
-infinities {
+#ranks {
+	color: #fc8;
+}
+#infinities {
+	color: #c60;
+}
+#infinityGain {
+	font-size: 20px;
 	color: #840;
 }
-infinityGain {
-	color: #630;
-}
-stars {
+#stars {
 	color: #a8f;
 }
-eternities {
-	color: #808;
+#eternities {
+	color: #70d;
 }
-eternityGain {
-	color: #606;
+#eternityGain {
+	font-size: 20px;
+	color: #60c;
 }
