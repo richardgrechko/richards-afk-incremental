@@ -163,7 +163,7 @@ if (!window.update) {
 		afkData.points = afkData.points.add(afkData.pointGain.mul(afkData.pointMulti).mul(afkData.power.add(1)).pow(afkData.pointExp).root(afkData.pointRoot).mul(dt));
 		afkData.pointGain = afkData.points.div(25).add(1).root(3).mul(afkData.power.add(1).pow(2)).mul(new Decimal("e2.5e4").pow(afkData.greyStars.div(2).pow(1.25)));
 		afkData.pointMulti = afkData.points.add(1).log(50).add(1).pow(2.5).mul(new Decimal(2).pow(afkData.infinities.add(afkData.power.add(1).log(5)).div(10).root(1.25)).mul(new Decimal(2).pow(afkData.ranks.root(1.1))).mul(new Decimal("e2.5e4").pow(afkData.stars.pow(1.5))).mul(new Decimal("e5e4").pow(afkData.blueStars.pow(1.5))));
-		afkData.pointExp = afkData.points.add(1).log10().add(1).log10().add(1).add(afkData.infinities.div(50).root(5).add(afkData.eternities.div(25).root(1.5)).add(afkData.power.add(1).log10().div(10)).add(afkData.ranks.div(500))).add(afkData.blueStars.div(5)).add(afkData.redStars.div(5)).add(afkData.silverStars.div(2).pow(1.25)).root(2.5).add(afkData.finalStars.div(10).root(1.25));
+		afkData.pointExp = afkData.points.add(1).log10().add(1).log10().add(1).add(afkData.infinities.div(50).root(5).add(afkData.eternities.div(25).root(1.5)).add(afkData.power.add(1).log10().div(10)).add(afkData.ranks.div(500))).add(afkData.blueStars.div(5)).add(afkData.redStars.div(5)).add(afkData.silverStars.div(2).pow(1.25)).root(2.5).add(afkData.finalStars.div(10).root(2));
 		afkData.power = afkData.power.add(afkData.powerGain.mul(dt));
 		afkData.powerGain = afkData.points.add(1).log(2).root(1.375).div(100).mul(afkData.power.add(1).root(3)).mul(afkData.pinkStars.add(1).pow(2));
 		if (Decimal.gte(afkData.points,Number.MAX_VALUE)) {
@@ -173,7 +173,7 @@ if (!window.update) {
 		}
 		if (Decimal.gte(afkData.points.add(1).log(16).add(1).sub(new Decimal(1e6).log(16)).floor(),new Decimal(0))) {
 			afkData.ranks = afkData.points.add(1).log(16).add(1).sub(new Decimal(1e6).log(16))
-				.mul(afkData.orangeStars.div(10).add(1).root(1.5)).floor()
+				.mul(afkData.orangeStars.div(10).add(1).root(2)).floor()
 		} else {
 			afkData.ranks = new Decimal(0)
 		}
