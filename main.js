@@ -153,7 +153,7 @@ if (!window.update) {
 			afkData.previousInfinities = afkData.infinities;
 			afkData.infinities = afkData.infinities.add(afkData.infinityPassive.mul(afkData.infinityMulti).pow(afkData.infinityExp).root(afkData.infinityRoot).mul(dt))
 			afkData.infinityPassive = afkData.points.log(new Decimal(Number.MAX_VALUE).mul(new Decimal(2).pow(afkData.infinities.root(2)))).pow(25).mul(afkData.eternities.root(1.5).add(1)).root(5)
-			afkData.infinityMulti = afkData.infinities.log(25).pow(5).root(afkData.infinities.add(1).log(1e6).add(1)).mul(new Decimal(10).pow(afkData.stars.root(1.25)))
+			afkData.infinityMulti = afkData.infinities.log(25).pow(5).root(afkData.infinities.add(1).log(1e6).add(1)).mul(new Decimal(5).pow(afkData.stars.root(1.5)))
 			afkData.infinityExp = afkData.infinities.log(25).pow(5).log(25).add(1).root(2.5).div(afkData.infinities.add(1).log(1e6).add(1).root(2))
 		} else if (Decimal.gte(afkData.points,new Decimal(Number.MAX_VALUE).mul(new Decimal(2).pow(afkData.infinities.root(2)))) && Decimal.lt(afkData.infinities,25)) {
 			afkData.previousInfinities = new Decimal(0);
@@ -169,8 +169,8 @@ if (!window.update) {
 		} else {
 			afkData.infinityRoot = new Decimal(1)
 		}
-		if (Decimal.gte(afkData.infinities.add(1).log(10).add(1).sub(new Decimal(1e6).log(10)).floor(),new Decimal(0))) {
-			afkData.stars = afkData.infinities.add(1).log(10).add(1).sub(new Decimal(1e6).log(10)).floor()
+		if (Decimal.gte(afkData.infinities.add(1).log(5).add(1).sub(new Decimal(1e6).log(5)).floor(),new Decimal(0))) {
+			afkData.stars = afkData.infinities.add(1).log(5).add(1).sub(new Decimal(1e6).log(5)).floor()
 		} else {
 			afkData.stars = new Decimal(0)
 		}
