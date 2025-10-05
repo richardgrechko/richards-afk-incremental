@@ -75,13 +75,6 @@ window.afkData = {
 ---=== Updates ===---
 */
 var dt1,dt2,dt;
-if (!window.w.writeTextAt) {
-	window.w.writeTextAt = function(text,color,x,y) {
-		for (let i = 0; i < text.length; i++) {
-			writeCharAt(text[i],color,x+i,-y);
-		}
-	}
-}
 setInterval(_=>{
 	document.getElementById("points").innerText = `Points: ${fullFormat({num: afkData.points,precision:3})}`
 	if (Decimal.lt(measureOoMsPerSec(afkData.previousPoints,afkData.points),20)) {
