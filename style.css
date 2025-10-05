@@ -5,6 +5,10 @@ head {
 	color: white;
 	font-size: 24px;
 }
+pointSoftcap, infinitySoftcap {
+	font-size: 20px;
+	color: #f00;
+}
 pointGain {
 	font-size: 20px;
 	color: #ccc;
