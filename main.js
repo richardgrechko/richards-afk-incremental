@@ -93,6 +93,7 @@ setInterval(_=>{
 	} else {
 		document.getElementById("powerGain").innerText = `(+${fullFormat({num: fallback(measureOoMsPerSec(afkData.previousPower,afkData.power),new Decimal(1)),precision:3})} OoMs/s)`
 	}
+	document.getElementById("ranks").innerText = `Stars: ${fullFormat({num: afkData.ranks,precision:0})}`
 	document.getElementById("infinities").innerText = `Infinities: ${fullFormat({num: afkData.infinities,precision:3})}`
 	if (Decimal.lt(measureOoMsPerSec(afkData.previousInfinities,afkData.infinities),20)) {
 		document.getElementById("infinityGain").innerText = `(+${fullFormat({num: fallback(afkData.infinityPassive,new Decimal(1)),precision:3})}×${fullFormat({num: afkData.infinityMulti,precision:2})}^${fullFormat({num: afkData.infinityExp,precision:2})}/s)`
