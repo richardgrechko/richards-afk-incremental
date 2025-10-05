@@ -110,6 +110,12 @@ setInterval(_=>{
 	document.getElementById("blueStars").innerText = `Blue Stars: ${fullFormat({num: afkData.blueStars,precision:0})}`
 	document.getElementById("greenStars").innerText = `Green Stars: ${fullFormat({num: afkData.greenStars,precision:0})}`
 	document.getElementById("yellowStars").innerText = `Yellow Stars: ${fullFormat({num: afkData.yellowStars,precision:0})}`
+	document.getElementById("orangeStars").innerText = `Orange Stars: ${fullFormat({num: afkData.orangeStars,precision:0})}`
+	document.getElementById("redStars").innerText = `Red Stars: ${fullFormat({num: afkData.redStars,precision:0})}`
+	document.getElementById("pinkStars").innerText = `Pink Stars: ${fullFormat({num: afkData.pinkStars,precision:0})}`
+	document.getElementById("silverStars").innerText = `Silver Stars: ${fullFormat({num: afkData.silverStars,precision:0})}`
+	document.getElementById("greyStars").innerText = `Grey Stars: ${fullFormat({num: afkData.greyStars,precision:0})}`
+	document.getElementById("finalStars").innerText = `Final Stars: ${fullFormat({num: afkData.finalStars,precision:0})}`
 	document.getElementById("eternities").innerText = `Eternities: ${fullFormat({num: afkData.eternities,precision:3})}`
 	if (Decimal.lt(measureOoMsPerSec(afkData.previousEternities,afkData.eternities),20)) {
 		document.getElementById("eternityGain").innerText = `(+${fullFormat({num: fallback(afkData.eternityPassive,new Decimal(1)),precision:3})}/s)`
