@@ -1,41 +1,6 @@
 /*
----=== RichardLab AFK Incremental ===---
-*/
-function loadScript(src) {
-	return new Promise((resolve, reject) => {
-		const script = document.createElement("script");
-		script.src = src;
-		script.onload = resolve;
-		script.onerror = reject;
-		document.head.appendChild(script);
-	});
-}
-async function break_eternity() { 
-	if (typeof window.Decimal !== "undefined") { 
-		console.log("[OK] Break Eternity already loaded"); 
-		return true; 
-	}
-	const sources = [
-		"https://cdn.jsdelivr.net/npm/break_eternity.js",
-	]; 
-	for (let src of sources) { 
-		try {
-			await loadScript(src); 
-			if (typeof window.Decimal !== "undefined") { 
-				console.log(`[OK] Break Eternity loaded from: ${src}`);
-				return true; 
-			}
-		} catch (e) {
-			console.warn(`Failed to load from ${src}`);
-		}
-	}
-	console.log("[OK] Using fallback Decimal implementation"); 
-	return true; 
-}
-/*
 ---=== Formatting ===---
 */
-break_eternity()
 if (!window.commaFormat) {
 	function commaFormat(num) {
 		let portions = num.split(".")
