@@ -206,8 +206,8 @@ if (!window.update) {
 		} else {
 			afkData.infinityRoot = new Decimal(1)
 		}
-		if (Decimal.gte(afkData.infinities.add(1).log(7.5).add(1).sub(new Decimal(1e6).log(7.5)).floor(),new Decimal(0))) {
-			afkData.stars = afkData.infinities.add(1).log(7.5).add(1).sub(new Decimal(1e6).log(7.5)).floor()
+		if (Decimal.gte(afkData.infinities.add(1).log(6).add(1).sub(new Decimal(1e6).log(6)).floor(),new Decimal(0))) {
+			afkData.stars = afkData.infinities.add(1).log(6).add(1).sub(new Decimal(1e6).log(6)).floor()
 		} else {
 			afkData.stars = new Decimal(0)
 		}
