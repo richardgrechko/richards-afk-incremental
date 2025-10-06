@@ -181,7 +181,7 @@ if (!window.update) {
 			afkData.previousInfinities = afkData.infinities;
 			afkData.infinities = afkData.infinities.add(afkData.infinityPassive.mul(afkData.infinityMulti).pow(afkData.infinityExp).root(afkData.infinityRoot).mul(dt))
 			afkData.infinityPassive = afkData.points.log(new Decimal(Number.MAX_VALUE).mul(new Decimal(2).pow(afkData.infinities.root(2)))).pow(25).mul(afkData.eternities.root(1.5).add(1)).root(10)
-				.mul(afkData.infinities.div(100).root(afkData.infinities.add(1).log10().root(1.5)))
+				.mul(afkData.infinities.div(100).root(afkData.infinities.add(1).log10().root(1.1)))
 			afkData.infinityMulti = afkData.infinities.log(25).pow(2).mul(new Decimal(1.1).pow(afkData.stars.root(1.5)))
 				.mul(new Decimal(12.5).pow(afkData.blueStars.root(1.5)))
 				.mul(afkData.yellowStars.div(25).add(1).pow(2))
