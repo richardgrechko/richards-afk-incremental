@@ -1,18 +1,29 @@
+@font-face {
+	font-family: Lexend;
+	src: url(fonts/Lexend-Regular.ttf);
+}
+@font-face {
+	font-family: Lexend SemiBold;
+	src: url(fonts/Lexend-SemiBold.ttf);
+}
 body {
 	display: flex;
 	align-content: center;
 	background-color: #112;
 	color: #ffffff;
 	font-size: 24px;
+	font-family: Lexend SemiBold;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 #pointSoftcap, #infinitySoftcap {
+	font-family: Lexend;
 	font-size: 20px;
 	color: #f00;
 }
 #pointGain {
+	font-family: Lexend;
 	font-size: 20px;
 	color: #ccc;
 }
@@ -20,6 +31,8 @@ body {
 	color: #fcc;
 }
 #powerGain {
+	font-family: Lexend;
+	font-size: 20px;
 	color: #f88;
 }
 #ranks {
@@ -29,6 +42,7 @@ body {
 	color: #c60;
 }
 #infinityGain {
+	font-family: Lexend;
 	font-size: 20px;
 	color: #840;
 }
@@ -87,6 +101,7 @@ body {
 	color: #70d;
 }
 #eternityGain {
+	font-family: Lexend;
 	font-size: 20px;
 	color: #60c;
 }
