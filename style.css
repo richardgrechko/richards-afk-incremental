@@ -7,6 +7,7 @@
 	src: url(fonts/Lexend-SemiBold.ttf);
 }
 body {
+	height: 100vh;
 	display: flex;
 	align-content: center;
 	background-color: #112;
