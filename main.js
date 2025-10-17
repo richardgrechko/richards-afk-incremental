@@ -167,7 +167,7 @@ if (!window.update) {
 		afkData.power = afkData.power.add(afkData.powerGain.mul(dt));
 		afkData.powerGain = afkData.points.add(1).log(2).root(1.375).div(100).mul(afkData.power.add(1).root(3)).mul(afkData.pinkStars.add(1).pow(2));
 		if (Decimal.gte(afkData.points,Number.MAX_VALUE)) {
-			afkData.pointRoot = afkData.points.add(1).log(Number.MAX_VALUE) // this is to softcap points
+			afkData.pointRoot = afkData.points.add(1).log(Number.MAX_VALUE).root(1.25) // this is to softcap points
 		} else {
 			afkData.pointRoot = new Decimal(1)
 		}
